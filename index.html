@@ -1,1 +1,699 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
 
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="메르세데스-벤츠 교학모터스 동대문 전시장 이진우 팀장 상담 페이지"
+  >
+
+  <title>이진우 팀장 | 메르세데스-벤츠 동대문 전시장</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #080808;
+      color: #f5f5f5;
+      font-family:
+        Arial,
+        "Apple SD Gothic Neo",
+        "Noto Sans KR",
+        sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .top-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      width: 100%;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(8,8,8,0.78);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 72px;
+    }
+
+    .logo {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+
+    .nav-button {
+      padding: 11px 18px;
+      border-radius: 100px;
+      background: #ffffff;
+      color: #111111;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      min-height: 100vh;
+      padding: 120px 0 80px;
+      background:
+        radial-gradient(
+          circle at 75% 30%,
+          rgba(100,100,100,0.26),
+          transparent 30%
+        ),
+        linear-gradient(
+          120deg,
+          #050505 0%,
+          #111111 55%,
+          #050505 100%
+        );
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .eyebrow,
+    .section-label {
+      margin-bottom: 18px;
+      color: #aaa;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+    }
+
+    h1 {
+      margin-bottom: 25px;
+      font-size: clamp(45px, 6vw, 82px);
+      line-height: 1.08;
+      letter-spacing: -3px;
+    }
+
+    .hero-description {
+      max-width: 640px;
+      color: #c0c0c0;
+      font-size: 18px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 50px;
+      padding: 0 24px;
+      border: 1px solid #555;
+      border-radius: 100px;
+      font-size: 15px;
+      font-weight: 700;
+      transition: 0.25s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      border-color: #fff;
+      background: #fff;
+      color: #111;
+    }
+
+    .profile-card {
+      padding: 34px;
+      border: 1px solid #292929;
+      border-radius: 26px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.08),
+          rgba(255,255,255,0.02)
+        );
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+
+    .profile-mark {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 90px;
+      height: 90px;
+      margin-bottom: 30px;
+      border: 1px solid #666;
+      border-radius: 50%;
+      font-size: 34px;
+      font-weight: 700;
+    }
+
+    .profile-card h2 {
+      margin-bottom: 8px;
+      font-size: 32px;
+    }
+
+    .profile-card p {
+      color: #aaa;
+    }
+
+    .profile-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .profile-list div {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #292929;
+    }
+
+    .profile-list span:first-child {
+      color: #888;
+    }
+
+    .stats {
+      border-top: 1px solid #222;
+      border-bottom: 1px solid #222;
+      background: #0d0d0d;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .stat-item {
+      padding: 48px 28px;
+      border-right: 1px solid #222;
+    }
+
+    .stat-item:last-child {
+      border-right: 0;
+    }
+
+    .stat-item strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 34px;
+    }
+
+    .stat-item span {
+      color: #999;
+    }
+
+    .section {
+      padding: 110px 0;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 48px;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 15px;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.15;
+      letter-spacing: -2px;
+    }
+
+    .section-heading p {
+      color: #999;
+      font-size: 17px;
+    }
+
+    .model-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .model-card {
+      min-height: 310px;
+      padding: 28px;
+      border: 1px solid #282828;
+      border-radius: 22px;
+      background:
+        linear-gradient(
+          145deg,
+          #181818,
+          #0f0f0f
+        );
+      transition: 0.25s ease;
+    }
+
+    .model-card:hover {
+      transform: translateY(-7px);
+      border-color: #666;
+    }
+
+    .model-category {
+      display: inline-block;
+      margin-bottom: 80px;
+      color: #888;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    .model-card h3 {
+      margin-bottom: 8px;
+      font-size: 30px;
+    }
+
+    .model-card p {
+      color: #999;
+      font-size: 14px;
+    }
+
+    .promotion {
+      padding: 50px;
+      border: 1px solid #303030;
+      border-radius: 28px;
+      background:
+        linear-gradient(
+          135deg,
+          #151515,
+          #0a0a0a
+        );
+    }
+
+    .promotion-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: flex-end;
+    }
+
+    .promotion h3 {
+      margin: 10px 0 12px;
+      font-size: clamp(30px, 4vw, 48px);
+    }
+
+    .promotion p {
+      max-width: 680px;
+      color: #999;
+    }
+
+    .contact-section {
+      padding: 110px 0;
+      background: #f1f1f1;
+      color: #111;
+    }
+
+    .contact-box {
+      text-align: center;
+    }
+
+    .contact-box h2 {
+      margin-bottom: 15px;
+      font-size: clamp(38px, 5vw, 62px);
+      letter-spacing: -2px;
+    }
+
+    .contact-box p {
+      color: #555;
+      font-size: 17px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 35px;
+    }
+
+    .contact-buttons .button {
+      border-color: #111;
+      background: #111;
+      color: #fff;
+    }
+
+    footer {
+      padding: 48px 0;
+      background: #050505;
+      color: #777;
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    footer strong {
+      color: #fff;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .model-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .promotion-top {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .nav-inner {
+        min-height: 64px;
+      }
+
+      .logo {
+        font-size: 15px;
+        letter-spacing: 2px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 115px 0 70px;
+      }
+
+      h1 {
+        font-size: 47px;
+        letter-spacing: -2px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .stats-grid,
+      .model-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-item {
+        border-right: 0;
+        border-bottom: 1px solid #222;
+      }
+
+      .stat-item:last-child {
+        border-bottom: 0;
+      }
+
+      .section {
+        padding: 80px 0;
+      }
+
+      .promotion {
+        padding: 30px 24px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="top-nav">
+    <div class="container nav-inner">
+      <a href="#" class="logo">JINWOO BENZ</a>
+
+      <a href="#contact" class="nav-button">
+        상담하기
+      </a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">
+          MERCEDES-BENZ SALES CONSULTANT
+        </p>
+
+        <h1>
+          좋은 차를 넘어,<br>
+          좋은 선택을<br>
+          함께합니다.
+        </h1>
+
+        <p class="hero-description">
+          메르세데스-벤츠 교학모터스 동대문 전시장
+          이진우 팀장입니다. 차량 선택부터 금융 상담,
+          출고 이후 관리까지 책임감 있게 함께하겠습니다.
+        </p>
+
+        <div class="hero-buttons">
+          <a
+            href="tel:01000000000"
+            class="button button-primary"
+          >
+            전화 상담
+          </a>
+
+          <a
+            href="#contact"
+            class="button"
+          >
+            견적 문의
+          </a>
+        </div>
+      </div>
+
+      <aside class="profile-card">
+        <div class="profile-mark">J</div>
+
+        <p class="section-label">
+          SALES PROFILE
+        </p>
+
+        <h2>이진우 팀장</h2>
+
+        <p>
+          교학모터스 메르세데스-벤츠<br>
+          동대문 전시장
+        </p>
+
+        <div class="profile-list">
+          <div>
+            <span>경력</span>
+            <strong>2019년부터</strong>
+          </div>
+
+          <div>
+            <span>직책</span>
+            <strong>동대문 7팀 팀장</strong>
+          </div>
+
+          <div>
+            <span>인증</span>
+            <strong>C-SALES</strong>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <section class="stats">
+    <div class="container stats-grid">
+      <div class="stat-item">
+        <strong>7년+</strong>
+        <span>메르세데스-벤츠 세일즈 경력</span>
+      </div>
+
+      <div class="stat-item">
+        <strong>52대</strong>
+        <span>2024년 판매 실적</span>
+      </div>
+
+      <div class="stat-item">
+        <strong>C-SALES</strong>
+        <span>공식 세일즈 인증</span>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">MODEL GUIDE</p>
+
+          <h2>
+            나에게 맞는 벤츠를<br>
+            쉽고 정확하게
+          </h2>
+
+          <p>
+            주요 차종의 특징과 트림 차이를 정리해
+            고객님의 라이프스타일에 맞는 차량을 안내해드립니다.
+          </p>
+        </div>
+
+        <div class="model-grid">
+          <article class="model-card">
+            <span class="model-category">SEDAN</span>
+            <h3>E-Class</h3>
+            <p>
+              비즈니스 세단의 기준.
+              E 200부터 E 450까지 비교 상담
+            </p>
+          </article>
+
+          <article class="model-card">
+            <span class="model-category">SUV</span>
+            <h3>GLC</h3>
+            <p>
+              도심과 일상을 위한 프리미엄 중형 SUV
+            </p>
+          </article>
+
+          <article class="model-card">
+            <span class="model-category">SUV</span>
+            <h3>GLE</h3>
+            <p>
+              여유로운 공간과 편안한 승차감을 갖춘 SUV
+            </p>
+          </article>
+
+          <article class="model-card">
+            <span class="model-category">LUXURY</span>
+            <h3>S-Class</h3>
+            <p>
+              메르세데스-벤츠 플래그십 세단
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="promotion">
+          <div class="promotion-top">
+            <div>
+              <p class="section-label">
+                MONTHLY PROMOTION
+              </p>
+
+              <h3>2026년 7월 구매 상담</h3>
+
+              <p>
+                차종별 구매 조건, 금융 프로그램,
+                즉시 출고 가능 차량과 예상 초기 비용을
+                고객님의 조건에 맞춰 안내해드립니다.
+              </p>
+            </div>
+
+            <a href="#contact" class="button button-primary">
+              프로모션 문의
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section id="contact" class="contact-section">
+    <div class="container contact-box">
+      <p class="section-label">
+        CONTACT
+      </p>
+
+      <h2>벤츠 구매 상담</h2>
+
+      <p>
+        관심 차종과 구매 시기를 알려주시면
+        확인 후 직접 연락드리겠습니다.
+      </p>
+
+      <div class="contact-buttons">
+        <a href="tel:01000000000" class="button">
+          전화 연결
+        </a>
+
+        <a href="#" class="button">
+          카카오톡 상담
+        </a>
+
+        <a href="#" class="button">
+          견적 신청
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <strong>이진우 팀장</strong>
+        <p>
+          교학모터스 메르세데스-벤츠 동대문 전시장
+        </p>
+      </div>
+
+      <p>
+        © 2026 JINWOO BENZ. All rights reserved.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
